@@ -1,0 +1,7 @@
+/* modifica el comportamiento del parrafo, en este caso la fila */
+.fila{
+  display: flex; /*comportamiento*/
+  gap: 5px; /*espacio entre ellos*/
+  justify-content: space-between; /*eje primario, horizontal*/
+  align-items: center; /*eje secundario, vertical*/
+}

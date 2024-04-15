@@ -1,13 +1,70 @@
 /* selector universal*/
 *{
   color: blueviolet;
+  font-family: "Montserrat", sans-serif; /*tipo de letra (lo saque de google font)*/
+  /* !important solo se usa para imponer*/
 }
 p{
   background-color: blue;
   font-size: 50px;
   font-weight: 100;
+  /*
+  border-width: 1px;
+  border-color: brown;
+  border-style: dotted;
+  */
+  border: 1px solid brown;
+  border-radius: 35px; /*que sea curvo*/
+  width: 50%; /*puede ser porcentual*/
+  margin: 0px; /*espacio entre elementos*/
+  padding: 20px; /*distancia entre el texto y el borde de la caja*/
+  outline: 2px solid red; /*es como engrosar el border*/
+  text-align: center; /*alinear el texto*/
+  text-decoration: dotted black; /*decoracion de texto*/
+  text-transform: lowercase; /*para poner el texto como se indique,
+  ya sea en minusculas, mayusculas, etc*/
+  letter-spacing: normal; /*espacio entre letras*/
+  word-spacing: normal; /* espacio entre palabras*/
+  line-height: normal; /*espacio entre lineas*/
+  text-shadow: 2px 2px 5px; /*sombra, primer valor es horizontal,
+  segundo valor vertical y el ultimo valor es el difuminado*/
+}
+/*pseudo clases:*/
+P:hover { /* esta es para cuando paso el mouse por encima*/
+  background-color: rgb(190, 76, 133);
 }
 
+/*Color cuando ya visite el link*/
+a:visited{
+  color: aquamarine;
+}
+/*Color cuando no he visitado el link*/
+a:link{
+  color: blueviolet;
+}
+/*Color cuando doy click en el link*/
+a:active{
+  color: cadetblue;
+}
+
+/*pseudo elementos
+maneja una parte especifica*/
+
+p::first-letter{
+  font-size: 35px;
+}
+
+p::first-line{
+  color: rgb(14, 14, 29);
+}
+
+p::after{
+  content: "adios";
+}
+
+P::before{
+  content: "hola";
+}
 body{
   background-image: url("https://www.elsoldetijuana.com.mx/incoming/7h4hk6-kesikesiperrito.jpg/alternates/LANDSCAPE_768/Kesikesiperrito.jpg") ;
   background-repeat: no-repeat;
