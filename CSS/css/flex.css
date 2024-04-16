@@ -1,7 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 /* modifica el comportamiento del parrafo, en este caso la fila */
 .fila{
   display: flex; /*comportamiento*/
   gap: 5px; /*espacio entre ellos*/
-  justify-content: space-between; /*eje primario, horizontal*/
-  align-items: center; /*eje secundario, vertical*/
+  justify-content: space-between; /*eje primario*/
+  align-items: center; /*eje secundario*/
+}
+.columna{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
