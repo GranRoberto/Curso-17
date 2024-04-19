@@ -1,0 +1,39 @@
+:root {
+  --main-color-text: white;
+}
+
+section{
+  display: grid; /*muchas columnas y filas*/
+  grid-template-columns: repeat(3, 1fr); /*cuantas columnas deseo*/
+  gap: 25px; /*epacio entre elementos*/
+  justify-items: center; /*horizontal*/
+  align-content: center; /*vertical*/
+}
+
+section div { /*mezcla los dos*/
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: background-color 5s, color 2s; /*tiempo de color de fondo y letra*/
+}
+
+section div:hover {
+  background-color: darkblue; /*para el fondo*/
+  color: var(--main-color-text); /*para la letra*/
+}
+
+.info{
+  display: grid; /*muchas columnas y filas*/
+  grid-template-columns: repeat(12, 1fr); /*cuantas columnas deseo*/
+  gap: 25px; /*epacio entre elementos*/
+  justify-items: center; /*horizontal*/
+  align-content: center; /*vertical*/
+}
+
+.izquierda{
+  grid-column: span 4; /*el elemento ocupa 4 columnas del grid*/
+}
+
+.derecha{
+  grid-column: span 8;
+}

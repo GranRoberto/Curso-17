@@ -1,0 +1,26 @@
+div {
+  background-color: blue;
+}
+
+.relativo {
+  position: relative; /*se mueve el elemnto a partir de donde esta */
+  top: 50px;
+}
+
+.absolute {
+  position: absolute; /*es un elemento se super pone a todo y no se va a mover*/
+  top: 80px;
+  right: 0;
+}
+
+.fijo {
+  position: fixed; /* se queda fijo en la pantalla pero no
+  conserva el espacio en  caso de cambiar las dimensiones de la pestaña*/
+  bottom: 0;
+  right: 0;
+}
+
+.sticky {
+  position: sticky; /*es para una nav que te sigue pero parte de su punto de inicio*/
+  top: 0;
+}
