@@ -120,7 +120,7 @@ console.log(compras[4][0]['nombre']); // Papaya
       {
         nombre: 'Sandia',
         cantidad: 1,
-        precio: 20
+        precio: 20,
         tamaños: ['Grande', 'Mediana', 'Pequeña']
       }
     ],
@@ -150,4 +150,11 @@ console.log(compras[4][0]['nombre']); // Papaya
   3. El precio total de la compra
 */
 
-console.log(compras.frutas[1])
+console.log(compras.frutas[1].nombre);
+console.log(compras.frutas[2].precio);
+console.log(compras.frutas[3].tamaños[0]);
+console.log(compras.charcuteria[1].nombre);
+
+console.log(compras.frutas[0].precio + compras.frutas[1].precio + compras.frutas[2].precio + compras.frutas[3].precio)
+console.log(compras.charcuteria[0].precio + compras.charcuteria[1].precio)
+console.log(compras.frutas[0].precio + compras.frutas[1].precio + compras.frutas[2].precio + compras.frutas[3].precio + compras.charcuteria[0].precio + compras.charcuteria[1].precio)
