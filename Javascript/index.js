@@ -158,3 +158,128 @@ console.log(compras.charcuteria[1].nombre);
 console.log((compras.frutas[0].precio * compras.frutas[0].cantidad)+ (compras.frutas[1].precio * compras.frutas[1].cantidad) + (compras.frutas[2].precio * compras.frutas[2].cantidad) + (compras.frutas[3].precio * compras.frutas[3].cantidad))
 console.log((compras.charcuteria[0].precio * compras.charcuteria[0].cantidad) + (compras.charcuteria[1].precio * compras.charcuteria[1].cantidad))
 console.log((compras.frutas[0].precio * compras.frutas[0].cantidad)+ (compras.frutas[1].precio * compras.frutas[1].cantidad) + (compras.frutas[2].precio * compras.frutas[2].cantidad) + (compras.frutas[3].precio * compras.frutas[3].cantidad) + (compras.charcuteria[0].precio * compras.charcuteria[0].cantidad) + (compras.charcuteria[1].precio * compras.charcuteria[1].cantidad))
+
+// Operadores comparativos
+/*
+  Los operadores comparativos son utilizados para comparar dos valores y
+  devolver un valor booleano.
+*/
+
+var condicional = 5 === '5'; // false
+console.log(condicional);
+//Lista de operadores comparativos
+// > Mayor que
+// < Menor que
+// >= Mayor o igual que
+// <= Menor o igual que
+// == Igual que
+// === Estrictamente igual que
+// != Diferente que
+// !== Estrictamente diferente que
+
+// Operadores lógicos
+/*
+  Los operadores lógicos son utilizados para combinar dos o más valores
+  booleanos y devolver un valor booleano.
+*/
+/*
+  lista de operadores lógicos
+  && AND (Y)
+  || OR (O)
+  ! NOT (NO)
+*/
+
+condicional = 5 > 3 && 3 < 2; // false
+condicional = 5 > 3 || 3 < 2; // true
+condicional = !(!(5 > 3)); // false
+
+/* ----- ACTIVIDAD PARA REALIZAR EN CLASE ----- */
+    
+    // (Facil)
+    var uno = !true || false; // false
+    var dos = false && !false; //false
+    var tres = true && !false; //true
+
+    //(Medio)
+    var cuatro = (5 === 5) || (!true); //true
+    var cinco = (!0) || (5 < 0); //true
+    var seis = (3 > 4) && (!0); //false
+
+    //Avanzado
+    var siete = ( ((false || true) && (!false && true) )) || (true && false) //true
+    var ocho = (6 === 3+3) && (9/3 >= 3); //true
+    var nueve = (!(!false) || ( ("1" == 1)) && (!false === true) ); //true
+
+    //Hardcore
+    var diez = !(!true) === !( !( 5 >= 5 ) ); //true
+    var once = !( true && (!true === !( !(8 === 4*2) )) ); //true
+
+    //Ultra-Hardcore
+    var doce = !( true && (!true === !( !(16 === (4*2) + 8))) ) !== (false); //true
+
+    //Leyenda
+    var trece = !(((!(!(10 / 5 == "2") === false) != false) === ((5 * 5) <= (100 / 4))) && (!((1 + 1) !== (10 / 5)) !== (true)));
+
+    // Operadores aritméticos
+    /*
+      Los operadores aritméticos son utilizados para realizar operaciones
+      matemáticas.
+    */
+    var suma = 5 + 3; // 8
+    /*
+      Lista de operadores aritméticos
+      + Suma
+      - Resta
+      * Multiplicación
+      ** Exponenciación
+      / División
+      % Módulo
+      ++ Incremento
+      -- Decremento
+      = Asignación
+      =+ Suma y asignación
+      =- Resta y asignación
+      =* Multiplicación y asignación
+      =/ División y asignación
+      =% Módulo y asignación
+    */
+    var Exponenciacion = 5 ** 3; // 125 5x5x5
+    var residuo = 40 % 8; // 0
+    /*
+      4/2 = 2
+      4%2 = 0
+      5/2 = 2.5
+      5%2 = 1
+    */
+    var incremento = 5;
+    incremento++; // 6
+    incremento--; // 5
+    var asignacion = 5;
+    asignacion += 3; // 8 asignacion = asignacion + 3
+    asignacion -= 3; // 5 asignacion = asignacion - 3
+    asignacion *= 3; // 15 asignacion = asignacion * 3
+    asignacion /= 3; // 5 asignacion = asignacion / 3
+    asignacion %= 3; // 2 asignacion = asignacion % 3
+
+  // Condicionales
+  /*
+    Los condicionales son utilizados para tomar decisiones en base a una
+    condición.
+  */
+  var condicion = 5 > 3;
+  if (condicion) {
+    console.log('5 es mayor que 3');
+  } else {
+    console.log('5 no es mayor que 3');
+  }
+
+  var tiempo = true;
+  var dinero = true;
+  
+  if (tiempo && dinero) {
+    console.log('Vamos al cine');
+  } else if (tiempo || dinero) {
+    console.log('Vamos al cine');
+  } else {
+    console.log('No vamos al cine');
+  }
