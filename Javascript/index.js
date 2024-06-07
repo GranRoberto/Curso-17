@@ -244,7 +244,7 @@ condicional = !(!(5 > 3)); // false
       =% Módulo y asignación
     */
     var Exponenciacion = 5 ** 3; // 125 5x5x5
-    var residuo = 40 % 8; // 0
+    var residuo = 5 % 4; // 0
     /*
       4/2 = 2
       4%2 = 0
