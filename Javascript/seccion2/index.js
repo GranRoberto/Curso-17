@@ -675,3 +675,90 @@ while (true) {
     break;
   }
 }
+
+/*juego ejercicio 1 */
+class Personaje {
+  constructor(nombre, vida, ataque) {
+    this.nombre = nombre;
+    this.vida = vida;
+    this.ataque = ataque;
+  }
+
+  atacar(defensor) {
+    let ataque = Math.floor(Math.random() * this.ataque) + 1;
+    console.log(`${this.nombre} ataca y hace: ${ataque} puntos de daño`)
+    return defensor.vida -= ataque;
+  }
+
+  defender() {
+    this.vida += 3;
+  }
+  }
+
+  let goku = new Personaje('Goku', 20, 5);
+  let freezer = new Personaje('Freezer', 20, 6);
+
+  while(goku.vida > 0 && freezer.vida > 0) {
+  let orden = Math.floor(Math.random() * 2) + 1;
+  if(orden == 1) {
+    turno(goku, freezer);
+  } else {
+    turno(freezer, goku);
+  }
+  }
+
+  function turno(personaje1, personaje2){
+  let accion = Math.floor(Math.random() * 2) + 1;
+  if(accion == 1) {
+    personaje2.vida = personaje1.atacar(personaje2);
+    console.log(`${personaje1.nombre} ataca a ${personaje2.nombre}, su vida actual es: ${personaje2.vida}`);
+    if(personaje2.vida <= 0) {
+      console.log(`${personaje1.nombre} ha ganado`);
+    }
+  } else {
+    personaje1.defender();
+    console.log(`${personaje1.nombre} se defiende: ${personaje1.vida}`);
+  }
+}
+
+// Piedra papel o tijera
+
+class Juego {
+  constructor() {
+    this.victorias = 0;
+    this.derrotas = 0;
+    this.partidas = []
+  }
+
+  jugar() {
+    let opciones = ['piedra', 'papel', 'tijera'];
+    let opcionUsuario = prompt('Elige piedra, papel o tijera').toLowerCase();
+    let opcionComputadora = opciones[Math.floor(Math.random() * 3)];
+
+    if(opcionUsuario == opcionComputadora) {
+      alert('Empate');
+      this.partidas.unshift('Empate');
+    } else if(opcionUsuario == 'piedra' && opcionComputadora == 'tijera' ||
+              opcionUsuario == 'papel' && opcionComputadora == 'piedra' ||
+              opcionUsuario == 'tijera' && opcionComputadora == 'papel') {
+      alert(`Ganaste, la computadora eligió ${opcionComputadora}`);
+      this.victorias++;
+      this.partidas.unshift('Ganaste');
+    } else {
+      alert(`Perdiste, la computadora eligió ${opcionComputadora}`);
+      this.derrotas++;
+      this.partidas.unshift('Perdiste');
+    }
+    alert(`Victorias: ${this.victorias}, Derrotas: ${this.derrotas} \n${this.partidas.toString()}` );
+  }
+}
+
+let juego = new Juego();
+
+while(true) {
+  juego.jugar();
+  let continuar = confirm('Desea jugar de nuevo?');
+  if(!continuar) {
+    break;
+  }
+}
