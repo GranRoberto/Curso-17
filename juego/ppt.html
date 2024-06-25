@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="flex flex-col items-center space-y-24 justify-center h-screen min bg-gradient-to-tr from-teal-500 via-sky-400 to-teal-500">
+    <p id="resultado" class="font-extrabold text-6xl text-white text-center">RESULTADO</p>
+
+    <div id="displayer" class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+        <div class="flex flex-col items-center justify-start space-y-8">
+            <p class="text-2xl font-semibold text-white">Victorias: <span id="victorias">0</span> </p>
+            <p class="text-6xl  font-semibold text-teal-900">Jugador 1</p>
+            <div class="flex items-center justify-center h-28 space-x-8 text-6xl">
+                <button onclick="play('✊🏻')" class="hover:text-9xl">✊🏻</button>
+                <button onclick="play('✌🏻')" class="hover:text-9xl">✌🏻</button>
+                <button onclick="play('🖐🏻')" class="hover:text-9xl">🖐🏻</button>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center space-y-8 text-center">
+            <p class="text-3xl font-semibold text-teal-900">HISTORIAL</p>
+            <div id="historial" class="flex flex-col space-y-4 items-center justify-center text-3xl">
+
+            </div>
+        </div>
+        
+        <div id="P2" class="flex flex-col items-center justify-start space-y-8">
+            <p class="text-2xl font-semibold text-white">Victorias: <span id="derrotas">0</span> </p>
+            <p class="text-6xl font-semibold text-teal-900">NPC</p>
+            <div class="flex items-center justify-center h-28 space-x-8 text-6xl">
+                <button class="cursor-default">✊🏻</button>
+                <button class="cursor-default">✌🏻</button>
+                <button class="cursor-default">🖐🏻</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="ppt.js"></script>
+</html>

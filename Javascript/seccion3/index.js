@@ -51,3 +51,22 @@ console.log(nombre); // Juan
   2.- Crear una función que reciba un arreglo con 5 números y devuelva el número más grande. (Usa operador ternario y map)
 */
 
+/* 1*/
+{let suma = arr => arr.map(Number).reduce((total, num) => total + num, 0);
+let arreglo = [1, 2, 3, 4, 5];
+let resultados = suma(arreglo);
+
+console.log(`La suma es: ${resultados}`);}
+
+{
+  let numeros_ejercicio = [1, 2, 3, 4, 5];
+  let suma = 0;
+  numeros_ejercicio.map((numero) => suma += numero);
+  console.log(suma);
+}
+
+/* 2*/
+{const mayor = arr => arr.map(Number).reduce((max, num) => (num > max ? num : max), arr[0]);
+  const Arreglo = [10, 5, 20, 15, 8];
+  const Resultado = mayor(Arreglo);
+  console.log(`El número más grande es: ${Resultado}`);}
