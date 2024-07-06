@@ -129,3 +129,122 @@ miPromesa.then(
     console.log(`La respuesta fue: ${error}`)
   }
 )
+
+//Metodos HTTP
+
+//Get : para pedir u obtener datos (informacion)
+
+//Post : para enviar datos (informacion)
+
+//Put/Patch : para modificar datos (informacion)
+
+let usuario = {
+  nombre: "Delvis",
+  apellido: "Sanabria",
+  pais: "Venezuela",
+  estaActivo: false
+}
+
+//Delete : Sirve para borrar datos (Informacion) 
+
+//los estados de las API son:
+
+//-Respuesta correcta (200,201,204)
+//-Respuesta incorrecta (400,404,500)
+//-Error interno (500)
+
+//JSON
+
+//JavasCript Object Notation
+
+//Esto es un JSON
+{
+  "nombre": "delvis",
+  "apellido": "Sanabria",
+  "pais": "venezuela"
+}
+
+
+//Esto es un objeto
+let persona = {
+  nombre: "Delvis",
+  apellido: "Sanabria",
+  pais: "Venezuela"
+}
+
+//Fetch
+
+//Es la API nativa de javascript que nos sirve para obtener u enviar datos, atraves de peticiones HTTP
+//const ApiDatos = "https://rickandmortyapi.com/api/character/1";
+
+fetch(ApiDatos)
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.log(error))
+
+function ObtenerDatos(idUsuario){
+  return new Promise((resolve, reject)=>{
+    fetch(`https://jsonplaceholder.typicode.com/users/${idUsuario}`)
+    .then(response => response.json())
+    .then(data => resolve(data))
+    .catch(error => reject(error))
+  })
+}
+
+ObtenerDatos(1).then(data => console.log(data));
+
+//funciones Asyn-Await
+
+//Async Nos da a entender que la funcion que viene a continuacion es una funcion asincrona, que devuelve una promesa
+
+//await Nos da a entender que se debe completar la ejecucion de la funcion que la precede
+// antes de seguir con la ejecucion de la linea de codigo
+
+const ApiDatos = "https://rickandmortyapi.com/api/character/1";
+
+async function obtenerPersonaje(){
+  try {
+    const response = await fetch(ApiDatos);
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  } finally{
+    console.log("la funcion se ejecuto")
+  }
+}
+
+obtenerPersonaje()
+
+//Desectructuracion de objetos
+
+const numero = [1,2,3,4,5,6,7,8,9,10];
+
+const [primero, segundo, tercero,cuarto,quinto, ...resto] = numero;
+
+const nombres1 = ["Roberto", "Jesus", "Delvis", "Franciely"];
+
+const NombreQueQuiero = nombres1[3];
+
+console.log(NombreQueQuiero)
+
+
+console.log(primero)
+console.log(segundo)
+console.log(tercero)
+
+//Para objetos
+
+const persona1 = {
+  nombre: "Delvis",
+  apellido: "Sanabria",
+  pais: "Venezuela",
+}
+//para desestructurar sacamos las propiedades del objeto en variables individuales
+const {nombre, apellido, pais} = persona1;
+
+//Desestructurado
+console.log(apellido)
+//No desestructurado
+console.log(persona1.apellido)
