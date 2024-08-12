@@ -1,8 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Button from "./components/Button";
+import Products from "./pages/Products";
 import Home from "./pages/Home";
+import NavBar from "./components/shared/NavBar";
 
 /*
   Crear un componente "Lista" que reciba un array de strings llamado
@@ -26,12 +27,12 @@ import Home from "./pages/Home";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <NavBar />
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/productos"
-          element={<Button text="Hola Mundo 2" background="bg-green-600" />}
+        <Route path="/productos" element={<Products />} />
+        <Route path='*' element='404'
         />
       </Routes>
     </BrowserRouter>

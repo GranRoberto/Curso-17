@@ -1,6 +1,6 @@
-import Button from "../components/Button";
-import List from "../components/list";
-import Card from "../components/Card";
+import Button from "../components/shared/Button";
+import List from "../components/shared/List";
+import Card from "../components/shared/Card";
 
 export default function Home() {
   return (
