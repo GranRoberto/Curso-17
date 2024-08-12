@@ -1,7 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Button from './Components/Button';
-import List from './Components/List';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Button from "./components/Button";
+import Home from "./pages/Home";
 
 /*
   Crear un componente "Lista" que reciba un array de strings llamado
@@ -25,11 +26,14 @@ import List from './Components/List';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Button text="Hola Mundo 1" background="bg-red-600" />
-    <Button text="Hola Mundo 2" background="bg-green-600" />
-    <Button text="hola 3"/>
-    <Button text="hola 4"/>
-    <List items={["Rápido", "Bonito", "Barato"]} />
-    <List items={["Lento", "Feo", "Caro"]} />
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/productos"
+          element={<Button text="Hola Mundo 2" background="bg-green-600" />}
+        />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );
