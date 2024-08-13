@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Products from "./pages/Products";
+import TicTacToe from "./pages/TicTacToe";
 import Home from "./pages/Home";
 import NavBar from "./components/shared/NavBar";
 
@@ -32,6 +33,7 @@ createRoot(document.getElementById('root')).render(
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Products />} />
+        <Route path="/productos" element={<TicTacToe />} />
         <Route path='*' element='404'
         />
       </Routes>
