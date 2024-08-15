@@ -5,6 +5,7 @@ import Products from "./pages/Products";
 import TicTacToe from "./pages/TicTacToe";
 import Home from "./pages/Home";
 import NavBar from "./components/shared/NavBar";
+import { ThemeContextProvider } from "./context/themeContext";
 
 /*
   Crear un componente "Lista" que reciba un array de strings llamado
@@ -28,15 +29,16 @@ import NavBar from "./components/shared/NavBar";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NavBar />
-    <BrowserRouter>
-    <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/productos" element={<Products />} />
-        <Route path="/productos" element={<TicTacToe />} />
-        <Route path='*' element='404'
-        />
-      </Routes>
-    </BrowserRouter>
+    <ThemeContextProvider>
+      <NavBar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/productos" element={<Products />} />
+          <Route path="/tictactoe" element={<TicTacToe />} />
+          <Route path="*" element={"404"} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeContextProvider>
   </StrictMode>
 );
