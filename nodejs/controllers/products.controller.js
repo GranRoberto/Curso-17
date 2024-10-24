@@ -1,4 +1,4 @@
-import { Product } from "../models/product.model";
+import { Product } from "../models/products.model.js";
 
 /**
  * Get all products
@@ -64,7 +64,7 @@ export const getProductById = async (req, res) => {
  * @query {Number} limit - Limit of products
  * @returns {Object} - List of products
  * @method GET
- * @example http://localhost:3000/products/search?search=product&page=1&limit=10
+ * @example http://localhost:3000/search?search=product&page=1&limit=10
  */
 
 export const searchProduct = async (req, res) => {
