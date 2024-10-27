@@ -107,6 +107,9 @@ export const searchProduct = async (req, res) => {
 
 export const createProduct = async (req, res) => {
   try {
+    if(req.file) {
+      req.body.image = `http://localhost:3001/public/images/${req.file.filename}`;
+    }
     const product = new Product(req.body);
     await product.save();
     res.status(201).json("Product created");
