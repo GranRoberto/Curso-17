@@ -594,12 +594,12 @@ video {
   gap: 2rem;
 }
 
-.rounded-\[25px\] {
-  border-radius: 25px;
-}
-
 .rounded-\[15px\] {
   border-radius: 15px;
+}
+
+.rounded-\[25px\] {
+  border-radius: 25px;
 }
 
 .bg-blue-700 {
@@ -626,24 +626,24 @@ video {
   padding: 2rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .text-2xl {
