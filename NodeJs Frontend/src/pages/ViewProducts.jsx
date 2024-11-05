@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 /**
  * @description Page for viewing products
@@ -11,6 +11,22 @@ function ViewProducts() {
    */
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  /**
+   * Ref for the search input
+   */
+  const searchRef = useRef(null);
+
+  /**
+   * Function to search for a product
+   */
+  const searchProduct = () => {
+    const search = searchRef.current.value;
+    axios.get(`http://localhost:3001/search?search=${search}`).then((response) => {
+      setData(response.data);
+    });
+  }
+
 
   /**
    * Fetch data from the server
@@ -69,6 +85,17 @@ function ViewProducts() {
           <button className={styles.button_create}>Create</button>
         </Link>
       </div>
+      <div className="flex justify-center items-center">
+        <input
+          placeholder="Search..."
+          className="rounded-l-[15px] text-gray-800 pl-4 py-1 bg-white min-w-[80%] lg:min-w-[50%]"
+          type="text"
+          name="search"
+          ref={searchRef}
+          id="search"
+        />
+        <button onClick={searchProduct} className="rounded-r-[15px] p-1 bg-white">🔍</button>
+      </div>
       <ul className={styles.grid_products}>
         {data &&
           data.docs.map((product) => (
@@ -90,7 +117,11 @@ function ViewProducts() {
                     Editar
                   </button>
                 </Link>
-                <button onClick={() => deleteProduct(product._id)} className="text-red-600 bg-white rounded-[15px] px-2 py-1">
+
+                <button
+                  onClick={() => deleteProduct(product._id)}
+                  className="text-red-600 bg-white rounded-[15px] px-2 py-1"
+                >
                   Borrar
                 </button>
               </div>
